@@ -1,8 +1,8 @@
-const express = require("express"); //Importa o módulo Express
-const cors = require("cors");
-require("dotenv-safe").config();
-const jwt = require("jsonwebtoken");
-const testConnect = require("./db/testConnect");
+import "dotenv-safe/config.js"; // Carrega o .env ANTES de qualquer outro módulo
+import express from "express"; //Importa o módulo Express
+import cors from "cors";
+import testConnect from "./db/testConnect.js";
+import apiRoutes from "./routes/apiRoutes.js";
 
 class AppController {
   //Define uma classe para organizar a lógica da aplicação
@@ -20,7 +20,6 @@ class AppController {
   }
 
   routes() {
-    const apiRoutes= require('./routes/apiRoutes')
     this.express.use('/api/v1/',apiRoutes);// Definição da URL Base
     this.express.get('/', (_,res)=> {
       res.send({status:'OK'})
@@ -28,5 +27,5 @@ class AppController {
   }
 }
 
-//Exporta a instância do Express configurada, tornando-a acessível em outros arquivos
-module.exports = new AppController().express;
+//Exporta a instância do Express configurada, tornando-a acessível em outros arquivo
+export default new AppController().express;

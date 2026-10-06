@@ -1,5 +1,5 @@
-const app = require("./index");
-const cors = require('cors');
+import app from "./index.js";
+import cors from "cors";
 
 // Configuração do CORS com origens permitidas
 const corsOptions = {

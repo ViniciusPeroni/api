@@ -1,10 +1,12 @@
-const router = require('express').Router();
-const verifyJWT = require('../services/verifyJWT');
-const userController = require('../controllers/userController');
-const organizadorController = require('../controllers/organizadorController');
-const eventoController = require('../controllers/eventoController');
-const ingressoController = require('../controllers/ingressoController');
-const upload = require("../services/upload");
+import { Router } from "express";
+import verifyJWT from "../services/verifyJWT.js";
+import userController from "../controllers/userController.js";
+import organizadorController from "../controllers/organizadorController.js";
+import eventoController from "../controllers/eventoController.js";
+import ingressoController from "../controllers/ingressoController.js";
+import upload from "../services/upload.js";
+
+const router = Router();
 
 router.post('/user', userController.createUser);
 router.get('/user',verifyJWT, userController.getAllUsers);
@@ -32,4 +34,6 @@ router.get('/ingresso/evento/:id', ingressoController.getByIdEvento);
 router.put('/ingresso', ingressoController.updateIngresso);
 router.delete('/ingresso/:id', ingressoController.deleteIngresso);
 
-module.exports = router;
+// ... todas as rotas continuam iguais ...
+
+export default router;
