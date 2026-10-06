@@ -1,6 +1,6 @@
-const connect = require("./connect");
+import connect from "./connect.js";
 
-module.exports = function testConnect() {
+export default function testConnect() {
   try {
     const query = `SELECT 'Conexão bem-sucedida' AS Mensagem`;
     connect.query(query, function (err) {

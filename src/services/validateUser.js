@@ -1,4 +1,4 @@
-module.exports = function validateUser({
+export default function validateUser({
   cpf,
   email,
   password,

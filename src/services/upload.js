@@ -1,5 +1,5 @@
-const multer = require("multer");
+import multer from "multer";
 const storage = multer.memoryStorage(); // salva no buffer
 const upload = multer({ storage });
 
-module.exports = upload;
+export default upload;

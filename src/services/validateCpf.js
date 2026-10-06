@@ -1,6 +1,6 @@
-const connect = require("../db/connect");
+import connect from "../db/connect.js";
 
-module.exports = async function validateCpf(cpf, userId = null) {
+export default async function validateCpf(cpf, userId = null) {
   return new Promise((resolve, reject) => {
     const query = "SELECT id_usuario FROM usuario WHERE cpf = ?";
     const values = [cpf];
