@@ -1,11 +1,11 @@
-const connect = require("../db/connect");
-const jwt = require("jsonwebtoken");
-const validateUser = require("../services/validateUser");
-const validateCpf = require("../services/validateCpf");
-const bcrypt = require("bcrypt");
+import connect from "../db/connect.js";
+import jwt from "jsonwebtoken";
+import validateUser from "../services/validateUser.js";
+import validateCpf from "../services/validateCpf.js";
+import bcrypt from "bcrypt";
 const SALT_ROUNDS = 10;
 
-module.exports = class userController {
+export default class userController {
   static async createUser(req, res) {
     const { cpf, email, password, name, data_nascimento } = req.body;
 

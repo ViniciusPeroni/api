@@ -1,6 +1,6 @@
-const connect = require("../db/connect");
+import connect from "../db/connect.js";
 
-module.exports = class organizadorController {
+export default class organizadorController {
   static async createOrganizador(req, res) {
     const { nome, email, senha, telefone } = req.body;
 

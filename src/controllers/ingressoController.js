@@ -1,6 +1,6 @@
-const connect = require("../db/connect");
+import connect from "../db/connect.js";
 
-module.exports = class ingressoController {
+export default class ingressoController {
   // Criação de um ingresso
   static async createIngresso(req, res) {
     const { preco, tipo, fk_id_evento } = req.body;

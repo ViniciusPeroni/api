@@ -1,6 +1,6 @@
-const connect = require("../db/connect");
+import connect from "../db/connect.js";
 
-module.exports = class compraController {
+export default class compraController {
   static async createCompra(req, res) {
     const { data_compra, id_usuario, ingressos } = req.body;
     // ingressos será um array de objetos [{id_ingresso:1,quantidade:2},{id_ingresso:2,quantidade:1}]

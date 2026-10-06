@@ -1,6 +1,6 @@
-const connect = require("../db/connect");
+import connect from "../db/connect.js";
 
-module.exports = class eventoController {
+export default class eventoController {
   // Criação de um evento
   static async createEvento(req, res) {
     const { nome, descricao, data_hora, local, fk_id_organizador } = req.body;
