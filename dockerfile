@@ -1,6 +1,6 @@
 ## Comando obrigatório
 ## Baixa a imagem do node com versão alpine (versão mais simplificada e leve)
-FROM node:alpine
+FROM node:22-alpine
 
 ## Define o local onde o app vai ficar no disco do container
 ## Pode ser o diretório que você quiser
